@@ -18,13 +18,17 @@ private:
 
 class Task {
 public:
-    Task(const std::string& name)
-        : name(name) {}
+    Task(const std::string& name, int duration, const std::string& difficulty)
+        : name(name), duration(duration), difficulty(difficulty) {}
 
     std::string getName() const { return name; }
+    int getDuration() const { return duration; }
+    std::string getDifficulty() const { return difficulty; }
 
 private:
     std::string name;
+    int duration;  // Duration in weeks
+    std::string difficulty;
 };
 
 int main() {
@@ -37,9 +41,9 @@ int main() {
     juniors.push_back(TeamMember("Junior Developer 3", "Junior"));
 
     // Create tasks
-    Task task1("Task 1");
-    Task task2("Task 2");
-    Task task3("Task 3");
+    Task task1("Task 1", 1, "Easy");   // easy task need 1 week
+    Task task2("Task 2", 4, "Medium"); // medium task need 4 weeks, around 1 month
+    Task task3("Task 3", 12, "Hard");  // hard task need 12 weeks, around 3 months
 
     return 0;
 }
