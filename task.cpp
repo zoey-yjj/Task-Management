@@ -29,6 +29,7 @@ private:
     std::string name;
     int duration;  // Duration in weeks
     std::string difficulty;
+    std::vector<TeamMember*> assignees;
 };
 
 int main() {
@@ -44,6 +45,11 @@ int main() {
     Task task1("Task 1", 1, "Easy");   // easy task need 1 week
     Task task2("Task 2", 4, "Medium"); // medium task need 4 weeks, around 1 month
     Task task3("Task 3", 12, "Hard");  // hard task need 12 weeks, around 3 months
+
+    // Assign team members to tasks
+    // Task 1: 1 senior and 1 junior
+    task1.assignees.push_back(&senior);
+    task1.assignees.push_back(&juniors[0]);
 
     return 0;
 }
