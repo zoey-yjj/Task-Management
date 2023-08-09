@@ -13,6 +13,9 @@ public:
     int getDuration() const;
     std::string getDifficulty() const;
 
+    void addAssignee(TeamMember* member);
+    void printAssignees() const;
+
 private:
     std::string name;
     int duration;

@@ -11,10 +11,13 @@ public:
     ~Team();
 
     void addMember(TeamMember* member);
+    void allocateTask(Task* task, int numLeader, int numSeniors, int numJuniors);
+    void printAllocations() const;
     void clearMembers();
 
 private:
     std::vector<TeamMember*> members;
+    std::vector<Task*> assignedTasks;
 };
 
 #endif // TEAM_H
